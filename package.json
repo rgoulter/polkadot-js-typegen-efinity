@@ -1,5 +1,6 @@
 {
   "name": "@efinity/api-augment",
+  "type": "module",
   "version": "0.0.1",
   "private": true,
   "description": "Efinity types augment for @polkadot/api",
@@ -17,8 +18,8 @@
   "scripts": {
     "generate": "npm run load:meta && npm run generate:defs && npm run generate:meta",
     "load:meta": "curl -s -H \"Content-Type: application/json\" -d '{\"id\":\"1\", \"jsonrpc\":\"2.0\", \"method\": \"state_getMetadata\", \"params\":[]}' https://rpc.efinity.io/ > metadata.json",
-    "generate:defs": "ts-node --skip-project node_modules/.bin/polkadot-types-from-defs --package @efinity/api-augment/interfaces --input ./src/interfaces --endpoint ./metadata.json",
-    "generate:meta": "ts-node --skip-project node_modules/.bin/polkadot-types-from-chain --endpoint ./metadata.json --output ./src/interfaces",
+    "generate:defs": "ts-node-esm node_modules/.bin/polkadot-types-from-defs --package @efinity/api-augment/interfaces --input ./src/interfaces --endpoint ./metadata.json",
+    "generate:meta": "ts-node-esm node_modules/.bin/polkadot-types-from-chain --endpoint ./metadata.json --output ./src/interfaces",
     "build": "tsc -b --verbose"
   },
   "devDependencies": {
