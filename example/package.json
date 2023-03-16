@@ -8,6 +8,6 @@
     "@types/node": "18.8.3"
   },
   "dependencies": {
-    "@polkadot/api": "10.1.2"
+    "@polkadot/api": "10.1.3"
   }
 }
